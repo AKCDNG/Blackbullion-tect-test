@@ -1,4 +1,5 @@
 @import './reset';
+@import './media';
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: #b396f7;
@@ -18,8 +19,12 @@ a {
 
 body {
   margin: 0;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
+  @include large {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
 
 h1 {
