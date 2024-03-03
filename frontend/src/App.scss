@@ -3,3 +3,26 @@
 #root {
   text-align: center;
 }
+
+main {
+  .wrapper {
+    .sort-wrapper {
+      margin: 20px 0;
+      padding: 20px 0;
+      padding-left: 10px;
+      border-radius: 20px;
+      text-align: left;
+      background-color: #1a1576;
+      display: flex;
+      flex-direction: column;
+      h3 {
+        margin-left: 20px;
+        margin-bottom: 10px;
+      }
+      button {
+        color: white;
+        margin-right: 20px;
+      }
+    }
+  }
+}
