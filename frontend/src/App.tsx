@@ -8,6 +8,16 @@ const URL: string = 'https://www.blackbullion.com/api/_dev/pathways';
 function App() {
   const controller = new AbortController();
   const [apiFetch, setApiFetch] = useState<Array<PathType>>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const coursesPerPage: number = 10;
+
+  const startIndex: number = (currentPage - 1) * coursesPerPage;
+  const endIndex: number = startIndex + coursesPerPage;
+  const currentCourses: Array<PathType> = apiFetch.slice(0, endIndex);
+
+  const handleLoadMore = (): void => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
 
   const sortAlphabetical = () => {
     const sortedData = [...apiFetch].sort((a: PathType, b: PathType) =>
@@ -42,7 +52,7 @@ function App() {
         </div>
         <ul>
           <li>
-            {apiFetch.map(
+            {currentCourses.map(
               ({
                 id,
                 title,
@@ -73,6 +83,7 @@ function App() {
             )}
           </li>
         </ul>
+        <div onClick={handleLoadMore}>loadmore</div>
       </div>
     </main>
   );
