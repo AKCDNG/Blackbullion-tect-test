@@ -9,7 +9,7 @@ function App() {
   const controller = new AbortController();
   const [apiFetch, setApiFetch] = useState<Array<PathType>>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const coursesPerPage: number = 10;
+  const coursesPerPage: number = 3;
 
   const startIndex: number = (currentPage - 1) * coursesPerPage;
   const endIndex: number = startIndex + coursesPerPage;
@@ -46,8 +46,12 @@ function App() {
         <div className='sort-wrapper'>
           <h3>Sort</h3>
           <div className='sort-options'>
-            <button onClick={sortAlphabetical}>A-Z</button>
-            <button onClick={sortRecent}>Most Recent</button>
+            <button className='sort-btn' onClick={sortAlphabetical}>
+              A-Z
+            </button>
+            <button className='sort-btn' onClick={sortRecent}>
+              Most Recent
+            </button>
           </div>
         </div>
         <ul>
@@ -83,7 +87,9 @@ function App() {
             )}
           </li>
         </ul>
-        <div onClick={handleLoadMore}>loadmore</div>
+        <button className='load-more' onClick={handleLoadMore}>
+          Load More Courses
+        </button>
       </div>
     </main>
   );
