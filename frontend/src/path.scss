@@ -1,5 +1,38 @@
+@import '_media.scss';
+
 .path-wrap-inner {
+  position: relative;
+  margin-bottom: 10%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10%;
+  justify-content: center;
+  @include large {
+    flex-direction: row;
+  }
+  .text-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    @include large {
+      margin-top: 0;
+      width: 50%;
+    }
+    .course {
+      &.subline {
+        margin-top: 10px;
+      }
+      &.intro-text {
+        margin-top: 10px;
+      }
+    }
+  }
+  img {
+    // width: 100%;
+    border-radius: 50px;
+    @include large {
+      margin-right: 20px;
+    }
+  }
 }
