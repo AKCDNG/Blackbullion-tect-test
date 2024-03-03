@@ -22,14 +22,15 @@
     .course {
       &.subline {
         margin-top: 10px;
+        margin-bottom: 10px;
       }
       &.intro-text {
         margin-top: 10px;
+        margin-bottom: 20px;
       }
     }
   }
   img {
-    // width: 100%;
     border-radius: 50px;
     @include large {
       margin-right: 20px;
