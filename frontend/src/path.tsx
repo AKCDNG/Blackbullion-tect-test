@@ -17,7 +17,8 @@ function Path({
       <div className='text-wrap'>
         <h2 className='course headline'>{title}</h2>
         <p className='course subline'>
-          {type} • {duration}
+          {type[0].toUpperCase() + type.substring(1)}{' '}
+          {duration.length ? `• ${duration}` : null}
         </p>
         {intro.length ? <h3 className='course intro-text'>{intro}</h3> : null}
         <button>
