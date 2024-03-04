@@ -1,4 +1,4 @@
-function Sort({sortAlphabetical, sortRecent}) {
+function Sort({ sortAlphabetical, sortRecent }) {
   return (
     <div className='sort-wrapper'>
       <h3>Sort</h3>
@@ -14,4 +14,4 @@ function Sort({sortAlphabetical, sortRecent}) {
   );
 }
 
-export default Sort
+export default Sort;
