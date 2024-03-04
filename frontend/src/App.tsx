@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Path from './path';
+import Path from './Path';
 import Sort from './Sort';
 import './App.scss';
 import { coursesPerPage } from '../lib/constants';
