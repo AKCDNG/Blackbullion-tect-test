@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Path from './path';
+import Sort from './Sort';
 import './App.scss';
 
 import type PathType from '../lib/constants';
@@ -43,17 +44,7 @@ function App() {
   return (
     <main>
       <div className='wrapper'>
-        <div className='sort-wrapper'>
-          <h3>Sort</h3>
-          <div className='sort-options'>
-            <button className='sort-btn' onClick={sortAlphabetical}>
-              A-Z
-            </button>
-            <button className='sort-btn' onClick={sortRecent}>
-              Most Recent
-            </button>
-          </div>
-        </div>
+        <Sort sortAlphabetical={sortAlphabetical} sortRecent={sortRecent} />
         <ul>
           <li>
             {currentCourses.map(
