@@ -1,6 +1,5 @@
 import React from 'react';
-import { expect, test, describe, it } from 'vitest';
-import userEvent from '@testing-library/user-event';
+import { expect, describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Path from '../path';
 
