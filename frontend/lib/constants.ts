@@ -9,3 +9,5 @@ export type PathType = {
   type: string;
   has_summative_assessment: boolean;
 };
+
+export const coursesPerPage: number = 5;

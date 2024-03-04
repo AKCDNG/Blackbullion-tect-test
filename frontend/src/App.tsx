@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react';
 import Path from './path';
 import Sort from './Sort';
 import './App.scss';
+import { coursesPerPage } from '../lib/constants';
 
-import type PathType from '../lib/constants';
+import type { PathType } from '../lib/constants';
 const URL: string = 'https://www.blackbullion.com/api/_dev/pathways';
 
 function App() {
   const controller = new AbortController();
   const [apiFetch, setApiFetch] = useState<Array<PathType>>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const coursesPerPage: number = 3;
 
   const startIndex: number = (currentPage - 1) * coursesPerPage;
   const endIndex: number = startIndex + coursesPerPage;
@@ -20,15 +20,15 @@ function App() {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
-  const sortAlphabetical = () => {
+  const sortAlphabetical = (): void => {
     const sortedData = [...apiFetch].sort((a: PathType, b: PathType) =>
       a.title.localeCompare(b.title)
     );
     setApiFetch(sortedData);
   };
 
-  const sortRecent = () => {
-    const sortedData = [...apiFetch].sort(
+  const sortRecent = (): void => {
+    const sortedData: Array<PathType> = [...apiFetch].sort(
       (a: PathType, b: PathType) => b.id - a.id
     );
     setApiFetch(sortedData);
